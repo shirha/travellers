@@ -6,6 +6,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <title>2 Glyphs Travellers &amp; Derelict Freighters</title>
 <style> 
+@font-face {font-family: "NMS Kerned"; src: url("NMSFuturaProBook_Kerned.ttf");}
 @font-face {font-family: "NMS Glyphs"; src: url("NMS-Glyphs-Mono.ttf");}
 @font-face {font-family: Edwardian; src: url("ITCEDSCR.TTF");}
 h2 {text-align: center; max-width: 800px; font-size: 1.25em;}
@@ -27,6 +28,8 @@ img {height: 18px; vertical-align: middle; margin-bottom: 4px;}
 .yl {background-color: yellow;} 
 .br {background-color: #D2B48C;}        /* horrific nest */
 .bio {padding-left:30px;}
+.badge {display: inline-block; padding: 0;}
+.badge div {display: inline-block; padding: 0;}
 blockquote {margin: 0; padding: 0 10px; font-style: italic; color: #551a8b;} /* navy;} */
 .stroke {
   background: lightgrey; /* border: 1px solid #222; */ color: white; font-weight: bold;
@@ -37,6 +40,7 @@ blockquote {margin: 0; padding: 0 10px; font-style: italic; color: #551a8b;} /* 
 td {vertical-align: top;}
 button {font-size: 18px; padding: 2px 10px; margin-top: 15px; border-radius: 8px; border: 1px solid #222; background-color: greenyellow;}
 span {font-family: "NMS Glyphs"; font-size: larger; font-weight: bold;} 
+.k {font-family: "NMS Kerned"; font-weight: bold;} 
 .disabled {font-family: "NMS Glyphs"; font-size: larger; font-weight: bold; color: #a0a0a0;} 
 .dot {border-radius: 50%; border: 1px solid black; height: 10px; width: 10px; display: inline-block; margin-left: 8px;}
 .fl td::first-letter {font-weight: normal;}
@@ -60,11 +64,10 @@ a {color:black; white-space: nowrap; border-radius: 6px; padding: 1px 6px; text-
 .tbl {display: inline-block; padding-left: 0; width:130px;}
 .pg  {border: 0; padding: 0;}
 .pg img {vertical-align: top;}
-/*#sum {border-spacing: 0 4px;} tr {margin-top: 10px;}*/
+#sum {border-spacing: 4px; border-collapse: separate;}
 #sum td {padding-bottom: 5px;}
-  .r {margin-top: 10px;}
-  .pu {font-style: italic; color: purple; padding-left: 0; display: inline-block;}
-
+.r {margin-top: 10px;}
+.pu {font-style: italic; color: purple; padding-left: 0; display: inline-block;}
 
 /* https://stackoverflow.com/questions/14387690/how-can-i-show-only-corner-borders/61913549#61913549 */
 .box {
@@ -87,39 +90,58 @@ a {color:black; white-space: nowrap; border-radius: 6px; padding: 1px 6px; text-
 #option2 {display:none;}
 #shelter {white-space: nowrap; border-radius:0; padding: 0; text-decoration: underline; margin-bottom: 5px; border: 0px solid #808080;}
 .minus {display:inline-block;padding:0;background-color:pink;border-radius:50%;}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  max-width: 800px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+}
+.modal img {width: 80%; height: auto; margin: 10%;}
+
 </style></head><body>
+<div id="id01" class="modal">
+  <img src="help.png">
+</div>
+
 <h2>2 Glyphs Travellers &amp; Derelict Freighters<br>System Summary</h2>
 <table id=sum><tr><th>Systems</th><th>Planets</th></tr>
-<tr><td><a class=sy href=#Nitogu>Nitogu</a></td><td>
+<tr><td nowrap><img src="badge-b.png"/>&hairsp;<img src="badge-2.png"/>&hairsp;<img src="badge-hn2.png"/> <img src="class-c.png"/> <a class=sy href=#Nitogu>Nitogu</a></td><td>
   <a class=pl href=#Amer_70/13>Amer 70/13</a> 
   <a class=pl href=#Gihanneti>Gihanneti</a> 
   <a class=pl href=#Ebonnis>Ebonnis</a> 
   <a class=pl href=#Udhoek_V>Udhoek V</a> 
   <a class=pl href=#Irie_E20>Irie E20</a> 
   <a class=pl href=#Ebet_86/T8>Ebet 86/T8</a></td></tr>
-<tr><td><a class=sy href=#Achara>Achara</a></td><td>
+<tr><td nowrap><img src="badge-g.png"/>&hairsp;<img src="badge-2.png"/>&hairsp;<img src="badge-ai.png"/> <img src="class-c.png"/> <a class=sy href=#Achara>Achara</a></td><td>
   <a class=pl href=#Runseycit>Runseycit</a> 
   <a class=pl href=#Antaan_A16>Antaan A16</a> 
   <a class=pl href=#Sain_IX>Sain IX</a> 
   <a class=pl href=#Cotter>Cotter</a></td></tr>
-<tr><td><a class=sy href=#Lolringor>Lolringor</a></td><td>
+<tr><td nowrap><img src="badge-g.png"/>&hairsp;<img src="badge-2.png"/>&hairsp;<img src="badge-ai.png"/> <img src="class-a.png"/> <a class=sy href=#Lolringor>Lolringor</a></td><td>
   <a class=pl href=#Pipinugst>Pipinugst&nbsp;<div class=scy>&#9679;</div></a> 
   <a class=pl href=#Enfi>Enfi</a> 
   <a class=pl href=#Wotarytho_V>Wotarytho V</a> 
   <a class=pl href=#Chdada>Chdada</a> 
   <a class=pl href=#Finaxo_Major>Finaxo Major</a> 
   <a class=pl href=#Ceklavis_XII>Ceklavis XII</a></td></tr>
-<tr><td><a class=sy href=#Suitaak>Suitaak</a></td><td>
+<tr><td nowrap><img src="badge-y.png"/>&hairsp;<img src="badge-2.png"/>&hairsp;<img src="badge-hn2.png"/> <img src="class-b.png"/> <a class=sy href=#Suitaak>Suitaak</a></td><td>
   <a class=pl href=#Wibordo_VI>Wibordo VI&nbsp;<div class=scy>&#9679;</div></a> 
   <a class=pl href=#Syba_T42>Syba T42</a></td></tr>
-<tr><td><a class=sy href=#Doludes>Doludes</a></td><td>
+<tr><td nowrap><img src="badge-y.png"/>&hairsp;<img src="badge-2.png"/>&hairsp;<img src="badge-ai.png"/> <img src="class-b.png"/> <a class=sy href=#Doludes>Doludes</a></td><td>
   <a class=pl href=#Ursawbor_Okkan>Ursawbor Okkan</a> 
   <a class=pl href=#Halc_Delta>Halc Delta</a> 
   <a class=pl href=#Onrovi>Onrovi&nbsp;<div class=scy>&#9679;</div></a> 
   <a class=pl href=#Goolesl>Goolesl</a> 
   <a class=pl href=#Midlin_XVI>Midlin XVI</a> 
   <a class=pl href=#E&#x203A;>E&#x203A;</a></td></tr>
-<tr><td><a class=sy href=#Erlingdi>Erlingdi</a></td><td>
+<tr><td nowrap><img src="badge-y.png"/>&hairsp;<img src="badge-2.png"/>&hairsp;<img src="badge-ai.png"/> <img src="class-c.png"/> <a class=sy href=#Erlingdi>Erlingdi</a></td><td>
   <a class=pl href=#Lamleyci_XVI>Lamleyci XVI</a> 
   <a class=pl href=#Anro_XIII>Anro XIII</a> 
   <a class=pl href=#Duen_Prime>Duen Prime</a> 
@@ -260,14 +282,13 @@ Shell-Strewn Planet<br>
 Stellar Corruption Detectex<br>
 Temperate Planet</div>
 <h2>2 Glyphs Travellers &amp; Derelict Freighters<br>System Detail</h2>
-<div class=s id=Nitogu><a class=sy href="javascript:clr();">Nitogu</a>
+<div class=s id=Nitogu><img src="badge-b.png"/>&hairsp;<img src="badge-2.png"/>&hairsp;<img src="badge-hn2.png"/> <img src="class-c.png"/> <a class=sy href="javascript:clr();">Nitogu</a>
   <div>System Info
     <div>Celestial Bodies: 5 Planets // 1 Moon</div>
     <div>Dominant Lifeform: Korvax</div>
     <div>Economy: Ore Processing // Adequate</div>
     <div>Conflict level: Testy</div>
     <div>Glyphs: <span>101011&nbsp;000000</span></div>
-    <div>SC: <div class="pol bl">B</div> T: <div class="pol bl">2</div> DF: <div class="pol br">HN</div> <div class="pol no">AI</div> <div class="pol gr">JF</div> CL: <img class="cc" src="c.png"/></div>
   </div>
   <div>Technology
     <div>Cold Protection</div>
@@ -393,14 +414,13 @@ Temperate Planet</div>
     </div>
   </div>
 </div>
-<div class=s id=Achara><a class=sy href="javascript:clr();">Achara</a>
+<div class=s id=Achara><img src="badge-g.png"/>&hairsp;<img src="badge-2.png"/>&hairsp;<img src="badge-ai.png"/> <img src="class-c.png"/> <a class=sy href="javascript:clr();">Achara</a>
   <div>System Info
     <div>Celestial Bodies: 4 Planets</div>
     <div>Dominant Lifeform: Korvax</div>
     <div>Economy: Technology // Developing</div>
     <div>Conflict level: Unstable</div>
     <div>Glyphs: <span>110011&nbsp;010101</span></div>
-    <div>SC: <div class="pol gr">G</div> T: <div class="pol bl">2</div> DF: <div class="pol no">HN</div> <div class="pol co">AI</div> <div class="pol gr">JF</div> CL: <img class="cc" src="c.png"/></div>
   </div>
   <div>Technology
     <div>Cold Protection</div>
@@ -492,14 +512,13 @@ Temperate Planet</div>
     </div>
   </div>
 </div>
-<div class=s id=Lolringor><a class=sy href="javascript:clr();">Lolringor</a>
+<div class=s id=Lolringor><img src="badge-g.png"/>&hairsp;<img src="badge-2.png"/>&hairsp;<img src="badge-ai.png"/> <img src="class-a.png"/> <a class=sy href="javascript:clr();">Lolringor</a>
   <div>System Info
     <div>Celestial Bodies: 6 Planets</div>
     <div>Dominant Lifeform: Gek</div>
     <div>Economy: Shipping // Medium Supply</div>
     <div>Conflict level: Gentle</div>
     <div>Glyphs: <span>100100&nbsp;010110</span></div>
-    <div>SC: <div class="pol gr">G</div> T: <div class="pol bl">2</div> DF: <div class="pol no">HN</div> <div class="pol co">AI</div> <div class="pol gr">JF</div> CL: <img class="cc" src="a.png"/></div>
   </div>
   <div>Technology
     <div>Blaze Javelin</div>
@@ -544,7 +563,7 @@ Temperate Planet</div>
       <div>Sentinels: <div class="poi co">Sharded from the Atlas</div></div>
       <div>Flora: Frequent</div>
       <div>Fauna: Abundant</div>
-      <div>POI: <div class="poi bl">Storm Crystals</div></div>
+      <div>POI: <div class='poi bl'>Storm Crystals</div> <img src='diamante-azul2.png'/></div>
     </div>
     <div>Resources
       <div>Solanium</div>
@@ -630,14 +649,13 @@ Temperate Planet</div>
     </div>
   </div>
 </div>
-<div class=s id=Suitaak><a class=sy href="javascript:clr();">Suitaak</a>
+<div class=s id=Suitaak><img src="badge-y.png"/>&hairsp;<img src="badge-2.png"/>&hairsp;<img src="badge-hn2.png"/> <img src="class-b.png"/> <a class=sy href="javascript:clr();">Suitaak</a>
   <div>System Info
     <div>Celestial Bodies: 2 Planets</div>
     <div>Dominant Lifeform: Vy'keen</div>
     <div>Economy: Research // Wealthy</div>
     <div>Conflict level: High</div>
     <div>Glyphs: <span>110101&nbsp;011010</span></div>
-    <div>SC: <div class="pol yl">Y</div> T: <div class="pol bl">2</div> DF: <div class="pol br">HN</div> <div class="pol no">AI</div> <div class="pol gr">JF</div> CL: <img class="cc" src="b.png"/></div>
   </div>
   <div>Technology
     <div>Blaze Javelin</div>
@@ -678,7 +696,7 @@ Temperate Planet</div>
       <div>Sentinels: <div class="poi co">Answer To None</div></div>
       <div>Flora: Full</div>
       <div>Fauna: Uncommon</div>
-      <div>POI: <div class="poi bl">Storm Crystals</div></div>
+      <div>POI: <div class='poi bl'>Storm Crystals</div> <img src='diamante-azul2.png'/></div>
     </div>
     <div>Resources
       <div>Gamma Root</div>
@@ -704,14 +722,13 @@ Temperate Planet</div>
     </div>
   </div>
 </div>
-<div class=s id=Doludes><a class=sy href="javascript:clr();">Doludes</a>
+<div class=s id=Doludes><img src="badge-y.png"/>&hairsp;<img src="badge-2.png"/>&hairsp;<img src="badge-ai.png"/> <img src="class-b.png"/> <a class=sy href="javascript:clr();">Doludes</a>
   <div>System Info
     <div>Celestial Bodies: 6 Planets</div>
     <div>Dominant Lifeform: Korvax</div>
     <div>Economy: Experimental // Booming</div>
     <div>Conflict level: Perilous</div>
     <div>Glyphs: <span>111100&nbsp;100100</span></div>
-    <div>SC: <div class="pol yl">Y</div> T: <div class="pol bl">2</div> DF: <div class="pol no">HN</div> <div class="pol co">AI</div> <div class="pol gr">JF</div> CL: <img class="cc" src="b.png"/></div>
   </div>
   <div>Technology
     <div>Blaze Javelin</div>
@@ -784,7 +801,7 @@ Temperate Planet</div>
       <div>Sentinels: <div class="poi co">Rebellious</div></div>
       <div>Flora: Low</div>
       <div>Fauna: Full</div>
-      <div>POI: <div class="poi bl">Storm Crystals</div></div>
+      <div>POI: <div class='poi bl'>Storm Crystals</div> <img src='diamante-azul2.png'/></div>
     </div>
     <div>Resources
       <div>Cobalt</div>
@@ -840,14 +857,13 @@ Temperate Planet</div>
     </div>
   </div>
 </div>
-<div class=s id=Erlingdi><a class=sy href="javascript:clr();">Erlingdi</a>
+<div class=s id=Erlingdi><img src="badge-y.png"/>&hairsp;<img src="badge-2.png"/>&hairsp;<img src="badge-ai.png"/> <img src="class-c.png"/> <a class=sy href="javascript:clr();">Erlingdi</a>
   <div>System Info
     <div>Celestial Bodies: 3 Planets // 2 Moons</div>
     <div>Dominant Lifeform: Korvax</div>
     <div>Economy: Trading // Advanced</div>
     <div>Conflict level: At War</div>
     <div>Glyphs: <span>110101&nbsp;101101</span></div>
-    <div>SC: <div class="pol yl">Y</div> T: <div class="pol bl">2</div> DF: <div class="pol no">HN</div> <div class="pol co">AI</div> <div class="pol gr">JF</div> CL: <img class="cc" src="c.png"/></div>
   </div>
   <div>Technology
     <div>Cold Protection</div>
@@ -1017,6 +1033,22 @@ function clearCheckbox(){
       .filter(key => /Ms \d\.\d/.test(key))
       .map(key => localStorage.removeItem(key));
     [...cbox].map(e => e.checked = false);
+  }
+}
+
+let modal = document.getElementById('id01');
+
+[...document.querySelectorAll('img')]
+  .filter(e => /badge|class/.test(e.src))
+  .forEach(e => e.addEventListener('click', function (event) {
+    console.log(e);
+    modal.style.display='block';
+}));
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target.parentNode == modal || event.target == modal) {
+    modal.style.display = "none";
   }
 }
 
